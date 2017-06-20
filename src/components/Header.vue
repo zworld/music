@@ -29,22 +29,22 @@
     height: 70px;
     background: @bg-color;
     display: flex;
-  }
-  .btn{
-    .flex-center();
-    width: 100px;
-    text-align: center;
-  }
-  .main{
-    flex: 1;
-    .flex-center();
-  }
-  li{
-    float: left;
-  }
-  li a{
-    width: 100px;
-    .flex-center();
+    .btn{
+      .flex-center();
+      width: 100px;
+      text-align: center;
+    }
+    .main{
+      flex: 1;
+      .flex-center();
+    }
+    li{
+      float: left;
+    }
+    li a{
+      width: 100px;
+      .flex-center();
+    }
   }
 </style>
 <script>

@@ -8,7 +8,7 @@ describe('测试搜索是否正常', () => {
     const type = 1
     const limit = 30
     const data = 's=' + keywords + '&limit=' + limit + '&type=' + type + '&offset=0'
-    createRequest('/api/search/pc/', 'POST', data)
+    createRequest('/methods/search/pc/', 'POST', data)
       .then(result => {
         console.log(JSON.parse(result).result.songs[0].mp3Url)
         assert(JSON.parse(result).result.songs[0].name === '海阔天空')

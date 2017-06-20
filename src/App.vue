@@ -17,11 +17,5 @@
   }
 </script>
 <style lang="less">
-  body{
-    display: flex;
-    flex-direction: column;
-  }
-  main{
-    flex: 1;
-  }
+
 </style>

@@ -3,7 +3,7 @@ const router = express()
 const { createRequest } = require("../util/util")
 
 router.get("/", (req, res) => {
-  createRequest('/api/v2/banner/get', 'GET', null)
+  createRequest('/methods/v2/banner/get', 'GET', null)
     .then(result => {
       res.setHeader("Content-Type", "application/json")
       res.send(result)

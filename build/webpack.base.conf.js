@@ -27,6 +27,7 @@ var baseConfig = {
       'components': resolve('src/components'),
       'modules': resolve('src/modules'),
       'lib': resolve('src/assets/lib'),
+      'methods': resolve('src/methods'),
       'css': resolve('src/assets/css')
     }
   },

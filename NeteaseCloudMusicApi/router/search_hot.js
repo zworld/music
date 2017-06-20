@@ -12,7 +12,7 @@ router.get("/", (req, res) => {
 
   createWebAPIRequest(
     'music.163.com',
-    '/api/search/hot?type=1',
+    '/methods/search/hot?type=1',
     'POST',
     data,
     cookie,

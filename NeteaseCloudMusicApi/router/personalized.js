@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
   }
   createWebAPIRequest(
     'music.163.com',
-    '/api/personalized/playlist',
+    '/methods/personalized/playlist',
     'POST',
     data,
     cookie,

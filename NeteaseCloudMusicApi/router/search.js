@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
   const offset = req.query.offset || 0
 // 搜索单曲(1)，歌手(100)，专辑(10)，歌单(1000)，用户(1002) *(type)*
   const data = 's=' + keywords + '&limit=' + limit + '&type=' + type + '&offset=' + offset
-  createRequest('/api/search/pc/', 'POST', data)
+  createRequest('/methods/search/pc/', 'POST', data)
     .then(result => {
       res.setHeader("Content-Type", "application/json")
       res.send(result)

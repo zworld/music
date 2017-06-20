@@ -47,7 +47,7 @@ app.use('/comment/album', require('./router/comment_album'))
 
 app.use('/comment/playlist', require('./router/comment_playlist'))
 
-//未知 api
+//未知 methods
 app.use('/comment/like', require('./router/comment_like'))
 
 app.use('/comment/dj', require('./router/comment_dj'))
@@ -97,7 +97,7 @@ app.use('/login', require('./router/login'))
 //登录刷新
 app.use('/login/refresh', require('./router/login_refresh'))
 
-// 不明 api
+// 不明 methods
 app.use('/log/web', require('./router/logWeb'))
 
 // 获取歌词

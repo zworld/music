@@ -8,7 +8,7 @@ router.get("/", (req, res) => {
   }
   createWebAPIRequest(
     'music.163.com',
-    '/api/playlist/hottags',
+    '/methods/playlist/hottags',
     'POST',
     data,
     cookie,
