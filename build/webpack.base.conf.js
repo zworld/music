@@ -7,7 +7,7 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-module.exports = {
+var baseConfig = {
   entry: {
     app: './src/main.js'
   },
@@ -19,12 +19,15 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json', '.less', '.css'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
       'img': resolve('src/assets/img'),
-      'components': resolve('src/components')
+      'components': resolve('src/components'),
+      'modules': resolve('src/modules'),
+      'lib': resolve('src/assets/lib'),
+      'css': resolve('src/assets/css')
     }
   },
   module: {
@@ -67,3 +70,5 @@ module.exports = {
     ]
   }
 }
+
+module.exports = baseConfig

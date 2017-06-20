@@ -1,22 +1,27 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <m-header></m-header>
+    <main>
+      <router-view></router-view>
+    </main>
   </div>
 </template>
-
 <script>
-export default {
-  name: 'app'
-}
+  import 'css/common'
+  // 导入字体
+  import 'lib/font-awesome/less/font-awesome'
+  import MHeader from 'components/header'
+  export default {
+    name: 'app',
+    components: { MHeader }
+  }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="less">
+  body{
+    display: flex;
+    flex-direction: column;
+  }
+  main{
+    flex: 1;
+  }
 </style>

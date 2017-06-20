@@ -2,8 +2,9 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
+import 'babel-polyfill'
 import router from './router'
-
+// 全局css
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

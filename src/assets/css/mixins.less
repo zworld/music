@@ -1,0 +1,53 @@
+//清除浮动
+.clearfix(){
+  *zoom: 1;
+  &:before,
+  &:after{
+    content: '';
+    display: table;
+    clear: both;
+    height: 0;
+    width: 0;
+  }
+}
+//文字溢出省略
+.text-ellipsis(){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.opacity(@opacity:80){
+  opacity: @opacity/100;
+  filter: ~"alpha(opacity=@{opacity})";
+}
+.vertical-center(@position: absolute, @display: block){
+  position: @position;
+  left: 50%;
+  right: 50%;
+  transform: translate(-50%,-50%);
+}
+//全局定位
+.pos(r){
+  position: relative;
+}
+.pos(a){
+  position: absolute;
+}
+.pos(f){
+  position: fixed;
+}
+.pos(s){
+  position: static;
+}
+.allScreen(@pos: a, @px: 0){
+  .pos(@pos);
+  top: @px;
+  left: @px;
+  right: @px;
+  bottom: @px;
+}
+.flex-center(){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
