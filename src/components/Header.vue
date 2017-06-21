@@ -25,23 +25,24 @@
 <style lang="less">
   @import "../assets/css/variables";
   @import "../assets/css/mixins";
-  header{
+
+  header {
     height: 70px;
     background: @bg-color;
     display: flex;
-    .btn{
+    .btn {
       .flex-center();
       width: 100px;
       text-align: center;
     }
-    .main{
+    .main {
       flex: 1;
       .flex-center();
     }
-    li{
+    li {
       float: left;
     }
-    li a{
+    li a {
       width: 100px;
       .flex-center();
     }
@@ -54,7 +55,6 @@
     },
     methods: {},
     created() {
-
     },
     mounted() {
     }

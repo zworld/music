@@ -2,7 +2,7 @@
   <div class="module-container">
     <div class="index-nav">
       <ul>
-        <li class="on">
+        <li :class="{ on: current == 'recommend  '}">
           <a href="javascript:void(0)">个性推荐</a>
         </li>
         <li>
@@ -56,27 +56,15 @@
 
 </style>
 <script>
-  import {$http} from 'methods/http.js'
-//  import MBanner from 'components/Banner.vue'
   export default {
-//    components: { MBanner },
     data() {
-      return {}
+      return {
+        current: 'recommend'
+      }
     },
     methods: {},
     created() {
     },
-    mounted() {
-      $http({
-        url: '/api/top/playlist',
-        data: {
-          limit: 10,
-          order: 'new'
-        },
-        success(data) {
-          console.log(data)
-        }
-      })
-    }
+    mounted() {}
   }
 </script>

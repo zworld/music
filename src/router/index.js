@@ -21,10 +21,10 @@ export default new Router({
           redirect: 'recommend'
         }
       ]
+    },
+    {
+      path: '/*',
+      redirect: '/index'
     }
-    // {
-    //   path: '/*',
-    //   redirect: '/index'
-    // }
   ]
 })
