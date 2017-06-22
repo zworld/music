@@ -24,13 +24,33 @@ main{
   padding-top: 25%;
   position: relative;
 }
-.row-wrapper-3{
+.row-wrapper{
   width: 100%;
-  padding-top: 33.33%;
   position: relative;
+  .clearfix()
 }
-.row-wrapper-2{
-  width: 100%;
-  padding-top: 55%;
-  position: relative;
+
+.row-item-2,.row-item-3{
+  float: left;
+  width: 50%;
+  .blank{
+    width: 100%;
+  }
+  .row-img-wrapper{
+    position: relative;
+  }
+  .row-img{
+    .allScreen();
+    img{
+      width: 100%;
+    }
+  }
+  .row-title{
+    padding: 5px 10px 0;
+    margin-bottom: 15px;
+  }
 }
+.row-item-3{
+  width: 33.3333%;
+}
+
