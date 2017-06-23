@@ -158,7 +158,8 @@
       })
 
       // 处理全球榜 用Promise.all进行处理
-      // 传参ID
+      // 传参ID集合
+
       var wordListId = [5, 6, 19, 8, 4, 21, 10, 9, 11, 7, 20, 14, 15, 16, 18]
       var wordPromises = []
       for (let id of wordListId) {
