@@ -16,7 +16,10 @@
   import MSlider from 'components/Slider'
   export default {
     name: 'app',
-    components: { MHeader, MSlider }
+    components: { MHeader, MSlider },
+    created() {
+
+    }
   }
 </script>
 <style lang="less">

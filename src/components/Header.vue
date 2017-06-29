@@ -1,7 +1,7 @@
 <template>
   <header>
     <div class="btn">
-      <i class="fa fa-bars"></i>
+      <a href="javascript:void(0)" @click="showSlider"><i class="fa fa-bars"></i></a>
     </div>
     <div class="main">
       <ul>
@@ -25,7 +25,6 @@
 <style lang="less">
   @import "../assets/css/variables";
   @import "../assets/css/mixins";
-
   header {
     height: 70px;
     background: @bg-color;
@@ -49,14 +48,20 @@
   }
 </style>
 <script>
+  import bus from '@/eventBus'
   export default {
     data() {
       return {}
     },
-    methods: {},
+    methods: {
+      showSlider: function(){
+        bus.$emit('slider-show')
+      }
+    },
     created() {
     },
     mounted() {
+
     }
   }
 </script>

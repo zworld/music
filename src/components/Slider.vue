@@ -1,46 +1,49 @@
 <template>
-  <div class="slider">
-    <div class="slider-content" @click.stop>
-      <div class="user-info">
-        <template>
-          <div class="avatar"></div>
+  <transition name="slide">
+    <div class="slider" @click="show = !show" v-if="show">
+      <div class="slider-content" @click.stop>
+        <div class="user-info">
+          <template>
+            <div class="avatar"></div>
             <div class="info">
               <span class="name">zhongxinzhi</span>
               <span class="level">lv.7</span>
               <a class="sign">签到</a>
             </div>
-        </template>
-      </div>
-      <ul>
-        <li v-for="item in sliderList">
-          <a href="javascript:void(0)" class="slider-item">
-            <div class="left">
-              <i :class="['fa',item.icon]"></i> <span>{{ item.title }}</span>
-            </div>
-            <div class="right" v-if="item.right">{{ item.right }}</div>
-          </a>
-        </li>
-      </ul>
-      <div class="tools">
+          </template>
+        </div>
         <ul>
-          <li><a href="javascript:void(0)">夜间模式</a></li>
-          <li><a href="javascript:void(0)">设置</a></li>
-          <li><a href="javascript:void(0)">退出</a></li>
+          <li v-for="item in sliderList">
+            <a href="javascript:void(0)" class="slider-item">
+              <div class="left">
+                <i :class="['fa',item.icon]"></i> <span>{{ item.title }}</span>
+              </div>
+              <div class="right" v-if="item.right">{{ item.right }}</div>
+            </a>
+          </li>
         </ul>
+        <div class="tools">
+          <ul>
+            <li><a href="javascript:void(0)">夜间模式</a></li>
+            <li><a href="javascript:void(0)">设置</a></li>
+            <li><a href="javascript:void(0)">退出</a></li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 <style lang="less" scoped>
   @import "../assets/css/variables";
   @import "../assets/css/mixins";
   .slider{
     position: fixed;
+    z-index: 100;
     right: 0;
     left: 0;
     top: 0;
     bottom: 0;
-    background: @modal-color;
+    background: transparent;
   }
   .slider-content{
     background: #ffffff;
@@ -106,11 +109,21 @@
       }
     }
   }
+  //进入退出动画
+  .slide-enter-active, .slide-leave-to{
+    transform: translateX(-100%);
+    transition: all .5s;
+  }
+  .slide-enter-to, .slide-leave {
+    transform: translateX(0);
+  }
 </style>
 <script>
+  import bus from '@/eventBus'
   export default {
     data() {
       return {
+        show: false,
         sliderList: [
           {
             icon: 'fa-paper-plane-o',
@@ -152,6 +165,10 @@
     },
     methods: {},
     created() {
+      var vm = this
+      bus.$on('slider-show', function(){
+        vm.show = true
+      })
     },
     mounted() {
     }

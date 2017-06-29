@@ -28,7 +28,7 @@ var baseConfig = {
       'modules': resolve('src/modules'),
       'lib': resolve('src/assets/lib'),
       'methods': resolve('src/methods'),
-      'css': resolve('src/assets/css')
+      'css': resolve('src/assets/css'),
     }
   },
   module: {
